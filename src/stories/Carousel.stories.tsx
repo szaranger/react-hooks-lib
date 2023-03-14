@@ -11,10 +11,22 @@ export default {
   },
 };
 
-export const Default = () => (
-  <Carousel>
-    <Carousel.Item>Item 1</Carousel.Item>
-    <Carousel.Item>Item 2</Carousel.Item>
-    <Carousel.Item>Item 3</Carousel.Item>
-  </Carousel>
-);
+export function Default() {
+  return (
+    <Carousel>
+      <Carousel.Item>Item 1</Carousel.Item>
+      <Carousel.Item>Item 2</Carousel.Item>
+      <Carousel.Item>Item 3</Carousel.Item>
+    </Carousel>
+  );
+}
+
+export function Paused() {
+  return (
+    <Carousel isPaused>
+      <Carousel.Item>Item 1</Carousel.Item>
+      <Carousel.Item>Item 2</Carousel.Item>
+      <Carousel.Item>Item 3</Carousel.Item>
+    </Carousel>
+  );
+}

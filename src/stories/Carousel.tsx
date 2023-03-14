@@ -3,7 +3,17 @@ import React from "react";
 import { useCarousel } from "../lib/useCarousel";
 import "./Carousel.css";
 
-export const Item = ({ children, width }) => {
+type ItemType = {
+  children: React.ReactNode;
+  width?: number;
+};
+
+type CarouselType = {
+  children: React.ReactNode;
+  isPaused?: boolean;
+};
+
+export const Item = ({ children, width }: ItemType) => {
   return (
     <div className="carousel-item" style={{ width }}>
       {children}
@@ -11,9 +21,10 @@ export const Item = ({ children, width }) => {
   );
 };
 
-const Carousel = ({ children }: { children: React.ReactNode }) => {
+const Carousel = ({ children, isPaused }: CarouselType) => {
   const { activeIndex, handlers, updateIndex, style } = useCarousel({
     children,
+    isPaused,
   });
 
   return (
