@@ -21,7 +21,7 @@ export const Item = ({ children, width }: ItemType) => {
   );
 };
 
-const Carousel = ({ children, isPaused }: CarouselType) => {
+export function Carousel({ children, isPaused }: CarouselType) {
   const { activeIndex, handlers, updateIndex, style } = useCarousel({
     children,
     isPaused,
@@ -65,7 +65,3 @@ const Carousel = ({ children, isPaused }: CarouselType) => {
     </div>
   );
 };
-
-Carousel.Item = Item;
-
-export default Carousel;

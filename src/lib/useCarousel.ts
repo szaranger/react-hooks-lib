@@ -1,11 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useSwipeable } from "react-swipeable";
-
-type CarouselType = {
-  children: React.ReactNode;
-  isPaused?: boolean;
-  delay?: number;
-};
+import { CarouselType } from "./index.d";
 
 export function useCarousel({
   children = [],
@@ -13,7 +8,7 @@ export function useCarousel({
   delay = 5000,
 }: CarouselType) {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [paused, setPaused] = useState(isPaused);
+  const [paused] = useState(isPaused);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -43,8 +38,6 @@ export function useCarousel({
   const handlers = useSwipeable({
     onSwipedLeft: () => updateIndex(activeIndex + 1),
     onSwipedRight: () => updateIndex(activeIndex - 1),
-    onMouseEnter: () => setPaused(true),
-    onMouseLeave: () => setPaused(false),
   });
 
   const style = {
