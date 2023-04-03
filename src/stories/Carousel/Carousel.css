@@ -8,13 +8,24 @@
   transition: transform 0.3s;
 }
 
-.carousel-item {
+.carousel-card {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   height: 200px;
-  background-color: green;
+  background-color: #ff4785;
   color: #fff;
+}
+
+.carousel-dot {
+  border: 0;
+  border-radius: 50%;
+  margin: 10px 8px;
+  background: #adb4c6;
+  height: 2px;
+  width: 2px;
+  padding: 5px;
+  cursor: pointer;
 }
 
 .indicators {
@@ -27,6 +38,6 @@
 }
 
 .indicators > button.active {
-  background-color: green;
+  background-color: #ff4785;
   color: #fff;
 }
