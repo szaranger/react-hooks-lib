@@ -5,7 +5,6 @@ import "./Carousel.css";
 
 type ItemType = {
   children: React.ReactNode;
-  width?: number;
 };
 
 type CarouselType = {
@@ -14,12 +13,8 @@ type CarouselType = {
   withDots?: boolean;
 };
 
-export const Card = ({ children, width }: ItemType) => {
-  return (
-    <div className="carousel-card" style={{ width }}>
-      {children}
-    </div>
-  );
+export const Card = ({ children }: ItemType) => {
+  return <div className="carousel-card">{children}</div>;
 };
 
 export function Carousel({ children, isPaused, withDots }: CarouselType) {
