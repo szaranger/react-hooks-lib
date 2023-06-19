@@ -13,9 +13,15 @@ export default {
 export function Default() {
   return (
     <Carousel>
-      <Card>Item 1</Card>
-      <Card>Item 2</Card>
-      <Card>Item 3</Card>
+      <Card>
+        <div style={{ backgroundColor: "blue" }}>Item 1</div>
+      </Card>
+      <Card>
+        <div style={{ backgroundColor: "green" }}>Item 2</div>
+      </Card>
+      <Card>
+        <div style={{ backgroundColor: "red" }}>Item 3</div>
+      </Card>
     </Carousel>
   );
 }

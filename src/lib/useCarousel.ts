@@ -5,6 +5,7 @@ import { CarouselType } from "./index.d";
 export function useCarousel({
   children = [],
   isPaused = false,
+  transitionDelay = 500,
   delay = 5000,
 }: CarouselType) {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -42,6 +43,7 @@ export function useCarousel({
 
   const style = {
     transform: `translateX(-${activeIndex * 100}%)`,
+    transition: `transform ${transitionDelay}ms`,
   };
 
   return { activeIndex, handlers, updateIndex, style };

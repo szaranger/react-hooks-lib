@@ -1,4 +1,4 @@
 import { useCarousel } from "./lib/useCarousel";
-import { breakpoints, useWindowSize } from "./lib/useWindowSize";
+import { breakpoints, resolutions, useWindowSize } from "./lib/useWindowSize";
 
-export { breakpoints, useCarousel, useWindowSize };
+export { breakpoints, resolutions, useCarousel, useWindowSize };

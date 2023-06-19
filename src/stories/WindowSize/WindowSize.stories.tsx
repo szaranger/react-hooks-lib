@@ -1,12 +1,10 @@
 import React from "react";
 
-import { breakpoints, useWindowSize } from "../../lib/useWindowSize";
+import { resolutions, useWindowSize } from "../../lib/useWindowSize";
 
 function Window() {
   const [width] = useWindowSize();
-  const isSmallMobile = width <= breakpoints.xs;
-  const isMobile = width <= breakpoints.md && width >= breakpoints.xs;
-  const isTablet = width < breakpoints.lg && width >= breakpoints.md;
+  resolutions.size = width;
 
   const Content = () => (
     <p style={{ margin: "1rem" }}>
@@ -20,15 +18,15 @@ function Window() {
     </p>
   );
 
-  if (isSmallMobile) {
+  if (resolutions.xs) {
     return <div style={{ backgroundColor: "blue" }}>{Content()}</div>;
   }
 
-  if (isMobile) {
+  if (resolutions.sm) {
     return <div style={{ backgroundColor: "green" }}>{Content()}</div>;
   }
 
-  if (isTablet) {
+  if (resolutions.md) {
     return <div style={{ backgroundColor: "red" }}>{Content()}</div>;
   }
 
